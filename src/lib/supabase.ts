@@ -20,7 +20,7 @@ export type Database = {
           currency: string;
           status: 'active' | 'cancelled' | 'expired';
           stripe_subscription_id?: string;
-          stripe_customer_id?: string;
+          dotripe_customer_id?: string;
           created_at: string;
           expires_at: string;
         };
