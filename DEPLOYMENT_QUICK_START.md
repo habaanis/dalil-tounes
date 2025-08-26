@@ -59,7 +59,7 @@ VITE_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 
 # Google Maps Configuration (remplacez par votre vraie clé)
-GOOGLE_MAPS_API_KEY=AIzaSyANJrHS7OFU12UiLgtPIliTGgVVNrQKTug
+GOOGLE_MAPS_API_KEY=votre_nouvelle_cle_google_maps
 
 # Stripe (désactivé temporairement)
 # VITE_STRIPE_PUBLISHABLE_KEY=
