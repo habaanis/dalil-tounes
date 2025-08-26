@@ -22,4 +22,14 @@ export const config = {
   // Environnement
   isDevelopment: import.meta.env.DEV,
   isProduction: import.meta.env.PROD
-};
+}; 
+
+// Le code de la fonction doit être placé ici, APRÈS l'objet 'config'
+export function validateEnvironment() {
+  const { url, anonKey } = config.supabase;
+
+  if (!url || !anonKey) {
+    console.error('Erreur de configuration: Les variables VITE_SUPABASE_URL et VITE_SUPABASE_ANON_KEY doivent être définies.');
+    throw new Error('Variables d\'environnement Supabase manquantes.');
+  }
+}
