@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
    base: '/',
   build: {
+    outdir: 'dist',
     assetsDir: '',
     // Optimisations de build
     minify: 'terser',
