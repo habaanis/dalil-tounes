@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react';
+import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals';
 
 const PerformanceOptimizer: React.FC = () => {
   useEffect(() => {
     // Précharger les ressources critiques
     const preloadCriticalResources = () => {
-      // Précharger les polices
       const fontLink = document.createElement('link');
       fontLink.rel = 'preload';
       fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
       fontLink.as = 'style';
       document.head.appendChild(fontLink);
+    };
 
-      
-
-    // Optimiser les images lazy loading
+    // Optimiser les images en lazy loading
     const optimizeImages = () => {
       const images = document.querySelectorAll('img[loading="lazy"]');
       
@@ -39,7 +38,6 @@ const PerformanceOptimizer: React.FC = () => {
 
     // Différer les scripts non critiques
     const deferNonCriticalScripts = () => {
-      // Différer Google Analytics si présent
       const scripts = document.querySelectorAll('script[data-defer]');
       scripts.forEach((script) => {
         const newScript = document.createElement('script');
@@ -51,33 +49,28 @@ const PerformanceOptimizer: React.FC = () => {
 
     // Optimiser le cache du navigateur
     const optimizeBrowserCache = () => {
-      // Ajouter des headers de cache via meta tags
       const cacheMetaTag = document.createElement('meta');
       cacheMetaTag.httpEquiv = 'Cache-Control';
       cacheMetaTag.content = 'public, max-age=31536000';
       document.head.appendChild(cacheMetaTag);
     };
 
+    // // Mesurer les Core Web Vitals
+try {
+  getCLS(console.log);
+  getFID(console.log);
+  getFCP(console.log);
+  getLCP(console.log);
+  getTTFB(console.log);
+} catch (error) {
+  console.log('Web Vitals not available');
+}
+
     // Exécuter les optimisations
     preloadCriticalResources();
     optimizeImages();
     deferNonCriticalScripts();
     optimizeBrowserCache();
-
-    // Mesurer les Core Web Vitals
-    const measureWebVitals = async () => {
-      try {
-        const { getCLS, getFID, getFCP, getLCP, getTTFB } = await import('web-vitals');
-        
-        getCLS(console.log);
-        getFID(console.log);
-        getFCP(console.log);
-        getLCP(console.log);
-        getTTFB(console.log);
-      } catch (error) {
-        console.log('Web Vitals not available');
-      }
-    };
 
     // Mesurer après le chargement complet
     if (document.readyState === 'complete') {
@@ -91,7 +84,7 @@ const PerformanceOptimizer: React.FC = () => {
     };
   }, []);
 
-  return null; // Ce composant n'affiche rien
+  return null;
 };
 
 export default PerformanceOptimizer;
