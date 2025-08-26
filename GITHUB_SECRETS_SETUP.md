@@ -31,15 +31,17 @@ Value: https://votre-projet-id.supabase.co
 
 Secret 2:
 Name: VITE_SUPABASE_ANON_KEY
-Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+Value: votre_nouvelle_cle_anonyme_ici
 
 Secret 3:
 Name: SUPABASE_SERVICE_ROLE_KEY
-Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+Value: votre_nouvelle_cle_service_ici
+
+
 
 Secret 4:
 Name: GOOGLE_MAPS_API_KEY
-Value: AIzaSyANJrHS7OFU12UiLgtPIliTGgVVNrQKTug
+Value: votre_nouvelle_cle_google_maps
 
 Secret 5 (optionnel):
 Name: VITE_STRIPE_PUBLISHABLE_KEY

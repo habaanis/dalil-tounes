@@ -23,18 +23,18 @@ Value: https://votre-projet-id.supabase.co
 
 Variable 2:
 Key: VITE_SUPABASE_ANON_KEY
-Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+Value: VOTRE_CLÉ_SUPABASE
 
 Variable 3:
 Key: SUPABASE_SERVICE_ROLE_KEY
-Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+Value: VOTRE_CLÉ_SUPABASE
 ```
 
 #### 🗺️ **GOOGLE MAPS (1 variable)**
 ```
 Variable 4:
 Key: GOOGLE_MAPS_API_KEY
-Value: AIzaSyANJrHS7OFU12UiLgtPIliTGgVVNrQKTug
+Value: VOTRE_CLÉ_GOOGLE_MAPS
 ```
 
 #### 💳 **STRIPE (3 variables - OPTIONNEL pour l'instant)**

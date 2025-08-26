@@ -21,13 +21,13 @@ Votre site https://www.dalil-tounes.com est en ligne mais certaines fonctionnali
    Valeur: https://votre-projet-id.supabase.co
 
 2. VITE_SUPABASE_ANON_KEY  
-   Valeur: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+   Valeur: VOTRE_CLÉ_SUPABASE
 
 3. SUPABASE_SERVICE_ROLE_KEY
-   Valeur: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+   Valeur: VOTRE_CLÉ_SUPABASE
 
 4. GOOGLE_MAPS_API_KEY
-   Valeur: AIzaSyANJrHS7OFU12UiLgtPIliTGgVVNrQKTug
+   Valeur: VOTRE_CLÉ_GOOGLE_MAPS
 ```
 
 ### 🔄 **ÉTAPE 3 : Redéployer**

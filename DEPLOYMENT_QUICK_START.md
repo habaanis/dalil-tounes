@@ -54,9 +54,9 @@ Remplacez le contenu de votre fichier `.env` par :
 
 ```env
 # Supabase Configuration (remplacez par vos vraies valeurs)
-VITE_SUPABASE_URL=https://votre-projet-id.supabase.co
-VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
 
 # Google Maps Configuration (remplacez par votre vraie clé)
 GOOGLE_MAPS_API_KEY=AIzaSyANJrHS7OFU12UiLgtPIliTGgVVNrQKTug
