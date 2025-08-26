@@ -11,12 +11,7 @@ const PerformanceOptimizer: React.FC = () => {
       fontLink.as = 'style';
       document.head.appendChild(fontLink);
 
-      // Précharger les icônes critiques
-      const iconLink = document.createElement('link');
-      iconLink.rel = 'modulepreload';
-      iconLink.href = '/src/components/SearchBar.tsx';
-      document.head.appendChild(iconLink);
-    };
+      
 
     // Optimiser les images lazy loading
     const optimizeImages = () => {
