@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals';
+
 
 const PerformanceOptimizer: React.FC = () => {
   useEffect(() => {
-    // Précharger les ressources critiques
+    // Fonctions d'optimisation
     const preloadCriticalResources = () => {
       const fontLink = document.createElement('link');
       fontLink.rel = 'preload';
@@ -12,31 +12,25 @@ const PerformanceOptimizer: React.FC = () => {
       document.head.appendChild(fontLink);
     };
 
-    // Optimiser les images en lazy loading
     const optimizeImages = () => {
       const images = document.querySelectorAll('img[loading="lazy"]');
-      
       if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               const img = entry.target as HTMLImageElement;
               if (img.dataset.src) {
-                img.src = img.dataset.src;
+                img.src = img.dataset.src || '';
                 img.removeAttribute('data-src');
                 imageObserver.unobserve(img);
               }
             }
           });
-        }, {
-          rootMargin: '50px 0px'
-        });
-
+        }, { rootMargin: '50px 0px' });
         images.forEach((img) => imageObserver.observe(img));
       }
     };
 
-    // Différer les scripts non critiques
     const deferNonCriticalScripts = () => {
       const scripts = document.querySelectorAll('script[data-defer]');
       scripts.forEach((script) => {
@@ -47,7 +41,6 @@ const PerformanceOptimizer: React.FC = () => {
       });
     };
 
-    // Optimiser le cache du navigateur
     const optimizeBrowserCache = () => {
       const cacheMetaTag = document.createElement('meta');
       cacheMetaTag.httpEquiv = 'Cache-Control';
@@ -55,32 +48,26 @@ const PerformanceOptimizer: React.FC = () => {
       document.head.appendChild(cacheMetaTag);
     };
 
-    // // Mesurer les Core Web Vitals
-try {
-  getCLS(console.log);
-  getFID(console.log);
-  getFCP(console.log);
-  getLCP(console.log);
-  getTTFB(console.log);
-} catch (error) {
-  console.log('Web Vitals not available');
-}
+   
 
-    // Exécuter les optimisations
-    preloadCriticalResources();
-    optimizeImages();
-    deferNonCriticalScripts();
-    optimizeBrowserCache();
+    // Exécuter les optimisations au chargement
+    const executeOptimizations = () => {
+      preloadCriticalResources();
+      optimizeImages();
+      deferNonCriticalScripts();
+      optimizeBrowserCache();
+    };
 
-    // Mesurer après le chargement complet
+    // Lancer les optimisations
     if (document.readyState === 'complete') {
-      measureWebVitals();
+      executeOptimizations();
     } else {
-      window.addEventListener('load', measureWebVitals);
+      window.addEventListener('load', executeOptimizations);
     }
 
+    // Nettoyer l'écouteur d'événement
     return () => {
-      window.removeEventListener('load', measureWebVitals);
+      window.removeEventListener('load', executeOptimizations);
     };
   }, []);
 
