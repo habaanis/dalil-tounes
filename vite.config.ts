@@ -3,11 +3,12 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-   base: '/',
+  root: './',  // Ensure this points to your project root or where your index.html is located
   build: {
-    outdir: 'dist',
-    assetsDir: '',
+    outDir: 'dist', // Output directory after build
+  },
+});
+
     // Optimisations de build
     minify: 'terser',
     terserOptions: {
