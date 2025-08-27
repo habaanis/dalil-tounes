@@ -1,15 +1,11 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: './',  // Ensure this points to your project root or where your index.html is located
+  root: './',
   build: {
-    outDir: 'dist', // Output directory after build
-  },
-});
-
-    // Optimisations de build
+    outDir: 'dist',
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -17,28 +13,13 @@ export default defineConfig({
         drop_debugger: true,
       },
     },
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          maps: ['@googlemaps/js-api-loader'],
-          ui: ['lucide-react'],
-        },
-      },
-    },
-    // Compression des assets
-    assetsInlineLimit: 4096,
-    cssCodeSplit: true,
   },
-  optimizeDeps: {
-    exclude: ['lucide-react'],
-  },
-  // Configuration PWA et cache
+  plugins: [react()],
   server: {
-  host: '0.0.0.0',
-  port: 5173,
-  hmr: {
-    clientPort: 443
-  }
-},
-});
+    host: '0.0.0.0',
+    port: 5173,
+    hmr: {
+      clientPort: 443
+    }
+  },
+})
