@@ -27,7 +27,7 @@
 
 ## 🎯 Objectif : Obtenir une clé comme celle-ci
 ```
-AIzaSyANJrHS7OFU12UiLgtPIliTGgVVNrQKTug
+VOTRE_CLÉ_API_ICI
 ```
 
 **Dites-moi quand vous avez votre clé !**

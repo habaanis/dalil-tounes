@@ -78,8 +78,8 @@ Vous devriez voir 5 établissements d'exemple :
 Assurez-vous que ces variables sont configurées sur Netlify :
 ```
 VITE_SUPABASE_URL = https://votre-projet.supabase.co
-VITE_SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-GOOGLE_MAPS_API_KEY = AIzaSyANJrHS7OFU12UiLgtPIliTGgVVNrQKTug
+VITE_SUPABASE_ANON_KEY =VOTRE_CLÉ_API_ICI
+GOOGLE_MAPS_API_KEY = VOTRE_CLÉ_API_ICI
 ```
 
 ### 4.2 Redéploiement

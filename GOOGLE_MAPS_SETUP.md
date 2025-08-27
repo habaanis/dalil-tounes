@@ -71,7 +71,7 @@ Une fois créé, **assurez-vous que votre projet est sélectionné** en haut de 
 3. **Sauvegardez-la** dans un fichier texte temporaire
 
 **Exemple de clé** : `
-AIzaSyANJrHS7OFU12UiLgtPIliTGgVVNrQKTug`
+VOTRE_CLÉ_API_ICI
 ---
 
 ## 🔒 ÉTAPE 5 : Sécurisation de la clé (OBLIGATOIRE)
